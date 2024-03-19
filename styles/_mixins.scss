@@ -1,0 +1,66 @@
+@mixin flex-variant(
+  $display,
+  $direction: false,
+  $align: false,
+  $justify: false,
+  $wrap: false,
+  $gap: false,
+  $grow: false
+) {
+  display: $display !important;
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+  @if $gap {
+    row-gap: $gap;
+    column-gap: $gap;
+  }
+  @if $grow {
+    flex-grow: $grow;
+  }
+}
+
+@mixin mediaQuery($screen) {
+  @media (#{$screen}) {
+    @content;
+  }
+}
+
+@mixin flex-row-center($gap: false, $wrap: false) {
+  @include flex-variant(
+    flex,
+    $direction: row,
+    $align: center,
+    $justify: center,
+    $gap: $gap,
+    $wrap: $wrap
+  );
+}
+@mixin setAnimation($translate, $rotate) {
+  transform: $translate rotate($rotate);
+  &.show {
+    animation-name: show;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes show {
+    0% {
+      transform: $translate rotate($rotate) scale(0);
+    }
+
+    100% {
+      transform: $translate rotate($rotate) scale(1);
+    }
+  }
+}
