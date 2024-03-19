@@ -166,7 +166,6 @@ $margin: 3rem;
   position: relative;
   overflow-y: auto;
   visibility: hidden;
-  background-image: url("../media/images/background.svg");
   background-size: cover;
   background-position: 50% 100%;
 
@@ -253,7 +252,6 @@ $margin: 3rem;
           line-height: 1;
           transform: translateX(-15%);
 
-
           .first-letter {
             color: $pink-1;
             font-size: 28vh;
@@ -308,7 +306,6 @@ $margin: 3rem;
                 left: 0;
                 transform: translate(-13%, 100%) scaleX(-1);
               }
-
             }
           }
 
@@ -707,12 +704,14 @@ $margin: 3rem;
           transform: rotate(-1.5deg);
 
           .text-card {
-            background: linear-gradient(to bottom,
-                transparent 20%,
-                $orange-2 20% 45%,
-                transparent 45% 60%,
-                $orange-3 60% 80%,
-                transparent 80%);
+            background: linear-gradient(
+              to bottom,
+              transparent 20%,
+              $orange-2 20% 45%,
+              transparent 45% 60%,
+              $orange-3 60% 80%,
+              transparent 80%
+            );
             color: $black-1;
             font-size: 140%;
             text-transform: capitalize;
@@ -886,7 +885,6 @@ $margin: 3rem;
 }
 
 @keyframes rotatePhone {
-
   0%,
   10% {
     transform: rotate(0deg);
